@@ -1,11 +1,17 @@
+const dotenv = require("dotenv");
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const port = 3000;
+
+dotenv.config();
+
+app.use(cors());
+app.use(express.json());
 
 app.get("/", (_, res) => {
-  res.status(200).json({ message: "Hello ENIGMA" });
+  res.send("Hello from ENIGMA API");
 });
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+const port = process.env.PORT || 3000;
+
+app.listen(port);
