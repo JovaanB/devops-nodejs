@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (_, res) => {
-  res.send("Hello from ENIGMA API");
+  res.send("Hello from ENIGMA API!");
 });
 
 const port = process.env.PORT || 3000;
